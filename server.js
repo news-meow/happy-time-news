@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 
 
-if (!process.env.DATABASE_URL) {
-  throw 'DATABASE_URL is missing!';
-}
+// if (!process.env.DATABASE_URL) {
+//   throw 'DATABASE_URL is missing!';
+// }
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', err => { throw err; });
@@ -27,10 +27,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(cors());
 
-client.connect()
-  .then(() => {
-    console.log('PG Connected!');
-    app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
-  })
-  .catch(err => { throw err; });
+// client.connect()
+//   .then(() => {
+//     console.log('PG Connected!');
+app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
+//   })
+//   .catch(err => { throw err; });
 
+// Routes
+app.get('/', (request, response) => {
+  response.render('index');
+});
