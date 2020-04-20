@@ -1,4 +1,4 @@
-# no-covid-news
+# happy-time-news
 
 ## Authors: Stacey Teltser, Matthew Barnhart, and Chase Nickels
 
