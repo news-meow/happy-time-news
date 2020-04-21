@@ -35,7 +35,6 @@ function homePageRouteHandler(request, response) {
                 cat: catsResults,
                 article: newsResults
             };
-            console.log(viewModel);
             response.render('index', viewModel);
         })
         .catch(err => {
