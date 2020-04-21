@@ -4,24 +4,35 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>News App</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-     <h1>This is connected</h1>
-     <% article.forEach(article => { %>
-        <img src="<%= article.image_url %>" />
-        <a href="<%= article.url %>"><h2> <%= article.title %> </h2></a>
-        <h3><%= article.author %></h3>
-        <h4><%= article.source %></h4>
-        <p><%= article.description %></p>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>News App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>This is connected</h1>
+
+    <img src="<%= cat.url %>" />
+
+    <% article.forEach(article => { %>
+    <img src="<%= article.image_url %>" />
+    <a href="<%= article.url %>">
+        <h2> <%= article.title %> </h2>
+    </a>
+    <h3><%= article.author %></h3>
+    <h4><%= article.source %></h4>
+    <p><%= article.description %></p>
     <% }) %>
-        <script src="" async defer></script>
-    </body>
+
+    <script src="" async defer></script>
+</body>
+
 </html>

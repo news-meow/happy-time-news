@@ -11,8 +11,7 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
-const getNewsFromApi = require('./modules/news');
-const getCatsFromApi = require('./modules/cats');
+const homePageRouteHandler = require('./modules/news');
 
 
 // Connected to SQL database
@@ -41,9 +40,8 @@ client.connect()
     throw err;
   });
 
-
 // Routes
-app.get('/', [getNewsFromApi, getCatsFromApi]);
+app.get('/', homePageRouteHandler);
 
 // Testing getting stuff from SQL database
 
