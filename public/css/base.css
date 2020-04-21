@@ -1,1 +1,13 @@
 /* Base stylesheet for all pages */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #0D1F2D;
+    color: #EAEAEA;
+}
