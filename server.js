@@ -11,6 +11,8 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
+const newsModule = require('./modules/news');
+// const { getNewsFromApi } = newsModule;
 
 
 // Connected to SQL database
@@ -60,3 +62,13 @@ function getData(request, response) {
       console.log(err);
     });
 }
+
+
+
+
+
+
+
+
+// // renders response of getNewsFromApi
+// app.post('/', getNewsFromApi);
