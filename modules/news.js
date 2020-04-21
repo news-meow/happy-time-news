@@ -31,7 +31,12 @@ function getNewsFromApi (request, response) {
 }
 
 function Article (googleData) {
+    this.image_url = googleData.urlToImage;
+    this.url = googleData.url;
     this.title = googleData.title;
+    this.author = googleData.author;
+    this.source = googleData.source.name;
+    this.description = googleData.description;
 }
 
 module.exports = getNewsFromApi;

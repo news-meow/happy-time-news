@@ -16,8 +16,11 @@
     <body>
      <h1>This is connected</h1>
      <% article.forEach(article => { %>
-        <p> <%= article.title %> </p>
-    
+        <img src="<%= article.image_url %>" />
+        <a href="<%= article.url %>"><h2> <%= article.title %> </h2></a>
+        <h3><%= article.author %></h3>
+        <h4><%= article.source %></h4>
+        <p><%= article.description %></p>
     <% }) %>
         <script src="" async defer></script>
     </body>
