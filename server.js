@@ -32,7 +32,7 @@ app.use(cors());
 // client.connect()
 //   .then(() => {
 //     console.log('PG Connected!');
-app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 //   })
 //   .catch(err => { throw err; });
 
