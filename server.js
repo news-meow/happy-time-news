@@ -12,15 +12,18 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const newsModule = require('./modules/news');
-const { getNewsFromApi } = newsModule;
+// const { getNewsFromApi } = newsModule;
 
 
-// if (!process.env.DATABASE_URL) {
-//   throw 'DATABASE_URL is missing!';
-// }
+// Connected to SQL database
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', err => { throw err; });
+
+if (!process.env.DATABASE_URL) {
+  throw 'DATABASE_URL is missing!';
+}
+
 
 
 app.set('view engine', 'ejs');
@@ -29,17 +32,35 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(cors());
 
-// client.connect()
-//   .then(() => {
-//     console.log('PG Connected!');
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-//   })
-//   .catch(err => { throw err; });
+client.connect()
+  .then(() => {
+    console.log('PG Connected!');
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+  })
+  .catch(err => { throw err; });
+  
 
 // Routes
-app.get('/', (request, response) => {
-  response.render('index');
-});
+app.get('/', getData);
+
+// Testing getting stuff from SQL database
+
+function getData(request, response) {
+  const data = 'SELECT * FROM articles;';
+
+  client.query(data)
+    .then(results => {
+      const { rowCount, rows } = results;
+      console.log(rows);
+
+      response.render('index', {
+        articles: rows
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
 
 
 
@@ -48,14 +69,5 @@ app.get('/', (request, response) => {
 
 
 
-
-
-
-
-
-
-
-
-
-// renders response of getNewsFromApi
-app.post('/', getNewsFromApi);
+// // renders response of getNewsFromApi
+// app.post('/', getNewsFromApi);
