@@ -22,7 +22,6 @@ function getNewsFromApi (request, response) {
                 article: newsReturn
             }
             response.render('index', viewModel);
-            console.log(news);
         })
         .catch (err => {
             console.error(err);
