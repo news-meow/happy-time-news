@@ -5,7 +5,8 @@ function errorHandler(err, request, response, next) {
     if(!err.statusCode) err.statusCode = 500;
 
     if(err.shouldRedirect) {
-        response.render(`https://http.cat/${err.statusCode}.jpg`)
+        let badCat = `https://http.cat/${err.statusCode}.jpg`
+        response.render('../views/pages/error', {badCat})
     } else {
         response.status(err.statusCode).send(err.message);
     }
