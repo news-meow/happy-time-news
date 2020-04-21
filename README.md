@@ -30,3 +30,6 @@ Utilizing the google news API and a cat memes API, we will deliver a selection o
 ![Mobile Wireframe](https://drive.google.com/open?id=14Oem2gOqing2IFg3qXimHaTtTlJZ4BMB)
 ![Tablet Wireframe](https://drive.google.com/open?id=1rJv6PY-jDNH6t9F8j-gxby4HmFViZX86)
 ![Desktop Wireframe](https://drive.google.com/open?id=1F2ZzCy9dt1HeiYM9OgU0np6F54Wa19d7)
+
+![Domain Model](https://drive.google.com/file/d/1YL5ddbVHKM6Uzj-IXV03_XLI9iqU_gng/view?usp=sharing)
+![Database Relations](https://drive.google.com/file/d/1KLjBIwNp__N_A-V-D4_S_NxT7C1Z-1kM/view?usp=sharing)
