@@ -10,7 +10,7 @@ function getNewsFromApi (request, response) {
     superagent.checkout(url)
         .query({
             sources: 'google-news',
-            apiKey: process.nextTick.NEWS_API,
+            apiKey: process.env.NEWS_API,
         })
         .then (newsResponse => {
             let news  = newsResponse.body;
