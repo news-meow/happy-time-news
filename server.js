@@ -70,16 +70,6 @@ function getData(request, response) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 app.get('*', function(request, response, next) {
   let err = new Error(`${request.ip} tried to reach ${request.originalUrl}`);
   err.statusCode = 404;
