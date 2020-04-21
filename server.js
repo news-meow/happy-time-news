@@ -12,14 +12,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const getNewsFromApi = require('./modules/news');
-// const errorHandler = require
+const errorHandler = require('./modules/error');
 // const { getNewsFromApi } = newsModule;
 
 
 // Connected to SQL database
 
 const client = new pg.Client(process.env.DATABASE_URL);
-client.on('error', err => { throw err; });
+client.on('error', err => {
+  errorHandler(err);
+});
 
 if (!process.env.DATABASE_URL) {
   throw 'DATABASE_URL is missing!';
@@ -42,7 +44,7 @@ client.connect()
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
   .catch(err => { 
-    throw err;
+    errorHandler(err);
   });
 
 
@@ -78,5 +80,11 @@ function getData(request, response) {
 
 
 
+app.get('*', function(request, response, next) {
+  let err = new Error(`${request.ip} tried to reach ${request.originalUrl}`);
+  err.statusCode = 404;
+  err.shouldRedirect = true;
+  next(err);
+});
 
-
+app.use(errorHandler);
