@@ -29,3 +29,33 @@
     padding-bottom: 2%;
 }
 
+/* Article Listings */
+
+.article-view-wrapper {
+    color: #0D1F2D;
+}
+
+.article-listing-wrapper {
+    background-color: #EAEAEA;
+}
+
+.article-author-source-wrapper {
+    color: #a8a4a4;
+}
+
+.button {
+    margin-left: 70%;
+    margin-top: 1%;
+    background-color: #444054;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {opacity: 1}
+
