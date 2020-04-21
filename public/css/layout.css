@@ -39,6 +39,10 @@
     text-align: center;
 }
 
+.article-words-wrapper h2 {
+    padding-bottom: 2%;
+}
+
 .article-view-wrapper {
     display: flex;
     flex-direction: column;
@@ -53,11 +57,13 @@
     display: flex;
     margin-top: 5%;
     padding: 2.5%;
+    margin-right: 2.5%;
 }
 
 .article-author-source-wrapper {
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 2%;
     
 }
 
