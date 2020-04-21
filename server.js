@@ -11,6 +11,8 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
+const newsModule = require('./modules/news');
+const { getNewsFromApi } = newsModule;
 
 
 // if (!process.env.DATABASE_URL) {
@@ -38,3 +40,22 @@ app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
 app.get('/', (request, response) => {
   response.render('index');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// renders response of getNewsFromApi
+app.post('/', getNewsFromApi);
