@@ -14,4 +14,8 @@ Team Agreement - https://docs.google.com/document/d/1RRcXnCQWKyDXqmeqFhe4s9eKwam
 
 User Stories - https://docs.google.com/document/d/1wxd_XOVY7DzsAfqoLuoUZK1zd_F-Z58Pdrd8cBAJtUw/edit
 
-Mobile Wireframe - https://files.slack.com/files-pri/T3F4FFV5F-F012K230MQR/happy-times-mobile-wireframe.png
+![mobile index wireframe](public\images\happy-times-mobile-wireframe.png "Mobile Index Wireframe")
+
+![tablet index wireframe](public\images\happy-times-tablet-wireframe.png "Tablet Index Wireframe")
+
+![desktop index wireframe](public\images\happy-times-desktop-wireframe.png "Desktop Index Wireframe")
