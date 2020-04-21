@@ -12,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const getNewsFromApi = require('./modules/news');
+// const errorHandler = require
 // const { getNewsFromApi } = newsModule;
 
 
@@ -32,6 +33,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(cors());
 
+// Routes
+app.get('/', getNewsFromApi);
+
 client.connect()
   .then(() => {
     console.log('PG Connected!');
@@ -42,8 +46,7 @@ client.connect()
   });
 
 
-// Routes
-app.get('/', getNewsFromApi);
+
 
 // Testing getting stuff from SQL database
 
@@ -63,3 +66,17 @@ function getData(request, response) {
       console.log(err);
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
