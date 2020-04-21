@@ -37,7 +37,9 @@ client.connect()
     console.log('PG Connected!');
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
-  .catch(err => { throw err; });
+  .catch(err => { 
+    throw err;
+  });
 
 
 // Routes
@@ -69,5 +71,6 @@ function getData(request, response) {
 
 
 
-// // renders response of getNewsFromApi
-// app.post('/', getNewsFromApi);
+// renders response of getNewsFromApi
+app.post('/', getNewsFromApi);
+app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
