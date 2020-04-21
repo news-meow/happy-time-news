@@ -1,1 +1,5 @@
 /* Layout stylesheet for all pages */
+
+.content-wrapper {
+    margin-top: 5%;
+}
