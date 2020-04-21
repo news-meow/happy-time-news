@@ -11,8 +11,8 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
-const newsModule = require('./modules/news');
-const { getNewsFromApi } = newsModule;
+const getNewsFromApi = require('./modules/news');
+// const { getNewsFromApi } = newsModule;
 
 
 // Connected to SQL database
@@ -35,15 +35,15 @@ app.use(cors());
 client.connect()
   .then(() => {
     console.log('PG Connected!');
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
   .catch(err => { 
     throw err;
   });
 
 
-
 // Routes
-app.get('/', getData);
+app.get('/', getNewsFromApi);
 
 // Testing getting stuff from SQL database
 
