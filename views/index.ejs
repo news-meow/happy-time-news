@@ -4,35 +4,37 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <%- include('./layout/head') %>
+    </head>
+    <body>
+        <div class="content-wrapper">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>News App</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
+            <header>
+                <%- include('./layout/header') %>
+            </header>
 
-<body>
-    <h1>This is connected</h1>
+            <img src="<%= cat.url %>" />
 
-    <img src="<%= cat.url %>" />
+            <div class="article-view-wrapper">
+                <% article.forEach(article => { %>
+                    <div class="article-listing-wrapper">
+                        <img class="article-image" src="<%= article.image_url %>" />
+                        <div class="article-words-wrapper">
+                            <a href="<%= article.url %>"><h2> <%= article.title %> </h2></a>
+                            <div class="article-author-source-wrapper">
+                                <h3><%= article.author %></h3>
+                                <h4><%= article.source %></h4>
+                            </div>
+                                <p><%= article.description %></p>
+                                <button class="button">Save for later</button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
 
-    <% article.forEach(article => { %>
-    <img src="<%= article.image_url %>" />
-    <a href="<%= article.url %>">
-        <h2> <%= article.title %> </h2>
-    </a>
-    <h3><%= article.author %></h3>
-    <h4><%= article.source %></h4>
-    <p><%= article.description %></p>
-    <% }) %>
-
-    <script src="" async defer></script>
-</body>
-
+        </div>
+        <script src="" async defer></script>
+    </body>
 </html>

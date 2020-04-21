@@ -1,1 +1,61 @@
 /* Modules for speciic styling throughout app */
+
+.sidebar a {
+    color: #EAEAEA;
+    font-weight: bold;
+    font-family: 'News Cycle', sans-serif;
+    letter-spacing: 0.2em;
+}
+.social a {
+    color: #EAEAEA;
+}
+
+/* Header */ 
+
+.title-wrapper {
+    font-family: 'News Cycle', sans-serif;
+    background-color: #37323E;
+    border: solid #EAEAEA 1px;
+}
+
+.title-wrapper h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+
+.title-wrapper h6 {
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+
+/* Article Listings */
+
+.article-view-wrapper {
+    color: #0D1F2D;
+}
+
+.article-listing-wrapper {
+    background-color: #EAEAEA;
+}
+
+.article-author-source-wrapper {
+    color: #a8a4a4;
+}
+
+.button {
+    margin-left: 70%;
+    margin-top: 1%;
+    background-color: #444054;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {opacity: 1}
+
