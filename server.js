@@ -13,12 +13,15 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 
 
+// Connected to SQL database
+
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', err => { throw err; });
+
 if (!process.env.DATABASE_URL) {
   throw 'DATABASE_URL is missing!';
 }
 
-const client = new pg.Client(process.env.DATABASE_URL);
-client.on('error', err => { throw err; });
 
 
 app.set('view engine', 'ejs');
@@ -34,7 +37,26 @@ client.connect()
   })
   .catch(err => { throw err; });
 
+
+
 // Routes
-app.get('/', (request, response) => {
-  response.render('index');
-});
+app.get('/', getData);
+
+// Testing getting stuff from SQL database
+
+function getData(request, response) {
+  const data = 'SELECT * FROM articles;';
+
+  client.query(data)
+    .then(results => {
+      const { rowCount, rows } = results;
+      console.log(rows);
+
+      response.render('index', {
+        articles: rows
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
