@@ -27,7 +27,7 @@ Utilizing the google news API and a cat memes API, we will deliver a selection o
 - [Team Agreement](https://docs.google.com/document/d/1RRcXnCQWKyDXqmeqFhe4s9eKwam_NG8cVKu3_OThC2Y/edit)
 - [User Stories](https://docs.google.com/document/d/1wxd_XOVY7DzsAfqoLuoUZK1zd_F-Z58Pdrd8cBAJtUw/edit)
 
-![Mobile Index Wireframe](public\images\happy-times-mobile-wireframe.png "Mobile Index Wireframe")
+![Mobile Index Wireframe](public\images\happy-times-mobile-wireframe.png)
 ![Tablet Index Wireframe](public\images\happy-times-tablet-wireframe.png "Tablet Index Wireframe")
 ![Desktop Index Wireframe](public\images\happy-times-desktop-wireframe.png "Desktop Index Wireframe")
 
