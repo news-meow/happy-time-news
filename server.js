@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const getNewsFromApi = require('./modules/news');
-// const { getNewsFromApi } = newsModule;
+const getCatsFromApi = require('./modules/cats');
 
 
 // Connected to SQL database
@@ -43,7 +43,7 @@ client.connect()
 
 
 // Routes
-app.get('/', getNewsFromApi);
+app.get('/', [getNewsFromApi, getCatsFromApi]);
 
 // Testing getting stuff from SQL database
 
@@ -63,14 +63,3 @@ function getData(request, response) {
       console.log(err);
     });
 }
-
-
-
-
-
-
-
-
-// renders response of getNewsFromApi
-app.post('/', getNewsFromApi);
-app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
