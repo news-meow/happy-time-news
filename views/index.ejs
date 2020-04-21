@@ -17,11 +17,13 @@
 
             <div class="article-view-wrapper">
                 <% article.forEach(article => { %>
+                    <div class="article-listing-wrapper">
                     <img class="article-image" src="<%= article.image_url %>" />
                     <a href="<%= article.url %>"><h2> <%= article.title %> </h2></a>
                     <h3><%= article.author %></h3>
                     <h4><%= article.source %></h4>
                     <p><%= article.description %></p>
+                </div>
                 <% }) %>
             </div>
 

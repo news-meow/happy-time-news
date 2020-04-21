@@ -73,4 +73,3 @@ function getData(request, response) {
 
 // renders response of getNewsFromApi
 app.post('/', getNewsFromApi);
-app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
