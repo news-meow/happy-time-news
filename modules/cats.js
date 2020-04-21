@@ -12,7 +12,7 @@ function getCatsFromApi (request, response) {
         .then (catsResponse => {
             const catsData = catsResponse.body;
             const catGif = () => new Cat(catsData)
-            response.render('pages/index', { cat: catGif})
+            response.render('index', { cat: catGif})
         })
         .catch (err => {
             console.error(err);
