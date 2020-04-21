@@ -14,7 +14,11 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-     
+     <h1>This is connected</h1>
+     <% article.forEach(article => { %>
+        <p> <%= article.title %> </p>
+    
+    <% }) %>
         <script src="" async defer></script>
     </body>
 </html>
