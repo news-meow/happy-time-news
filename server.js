@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
-// const { getNewsFromApi } = newsModule;
+
 
 
 // Connected to SQL database

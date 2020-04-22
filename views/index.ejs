@@ -15,10 +15,16 @@
                 <%- include('./layout/header') %>
             </header>
 
-            <img src="<%= cat.url %>" />
+            
 
             <div class="article-view-wrapper">
+
                 <% article.forEach(article => { %>
+
+                <% const regex = /(C?c?ovid( )?(-)?(19)?|COVID( )?(-)?(19)?|C?c?orona( )?(V?v?irus)?|P?p?andemic|CDC|F?f?ace( )?(M?m?ask)?)/g; %>
+
+                    <% if (regex.test(article.title) == false && regex.test(article.description) == false) { %>
+
                     <div class="article-listing-wrapper">
                         <img class="article-image" src="<%= article.image_url %>" />
                         <div class="article-words-wrapper">
@@ -31,7 +37,13 @@
                                 <button class="button">Save for later</button>
                         </div>
                     </div>
+
+                    <% }; %>
+
+                    
+
                 <% }) %>
+
             </div>
 
         </div>

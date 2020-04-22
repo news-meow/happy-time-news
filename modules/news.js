@@ -32,8 +32,8 @@ function homePageRouteHandler(request, response) {
     ])
         .then(([newsResults, catsResults]) => {
             let viewModel = {
-                cat: catsResults,
-                article: newsResults
+                article: newsResults,
+                cat: catsResults
             };
             response.render('index', viewModel);
         })
