@@ -17,6 +17,8 @@ const catalogModule = require ('./modules/catalog');
 
 const {getArticlesFromDB, setArticlesToDB} = catalogModule;
 
+const deleteArticlesFromDB = require('./modules/delete')
+
 // Connected to SQL database
 
 const client = new pg.Client(process.env.DATABASE_URL);
