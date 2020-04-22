@@ -39,7 +39,14 @@
                         <h4><%= article.source %></h4>
                     </div>
                     <p><%= article.description %></p>
-                    <button class="button">Save for later</button>
+                    <form action="/save" method="POST">
+                        <input type="hidden" name="image_url" value='<%= article.image_url %>' />
+                        <input type="hidden" name="url" value='<%= article.url %>' />
+                        <input type="hidden" name="title" value='<%= article.title %>' />
+                        <input type="hidden" name="author" value='<%= article.author %>' />
+                        <input type="hidden" name="source" value='<%= article.source %>' />
+                        <button class="button">Save for later</button>
+                    </form>
                 </div>
             </div>
 

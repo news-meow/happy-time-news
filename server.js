@@ -42,13 +42,14 @@ app.get('/', homePageRouteHandler);
 app.get('/about', (request, response) => {
   response.render('pages/about');
 });
-
-
-app.get('/catalog', getArticlesFromDB);
+app.get('/catalog', (request, response) => {
+  response.render('pages/catalog');
+});
 
 app.post('/save', (request, response) => {
   setArticlesToDB(request, response);
 });
+
 
 
 client.connect()

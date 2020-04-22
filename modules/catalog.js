@@ -52,11 +52,11 @@ function setArticlesToDB(request, response) {
 //     .catch(err => {
 //       errorHandler(err);
 //     });
-}
+// }
 
 
 module.exports = {
   setArticlesToDB,
-  getArticlesFromDB
+  // getArticlesFromDB
 };
 
