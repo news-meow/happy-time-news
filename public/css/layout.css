@@ -12,13 +12,13 @@
     margin-bottom: 2.5%;
 }
 
-.sidebar {
+.navbar {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 2.5%;
 }
 
-.sidebar a {
+.navbar a {
     text-decoration: none;
 }
 
@@ -71,11 +71,6 @@
 
 @media (min-width: 600px) {
 
-    * {
-        box-sizing: border-box;
-    }
-
-
     .article-view-wrapper {
         display: flex;
         flex-direction: row;
@@ -89,13 +84,13 @@
         width: 45%;
     }
 
-    .nav-bar {
+    .sidebar {
         width: 20%;
         position: fixed;
-        left: 2%;
+        left: 0%;
     }
 
-    .sidebar {
+    .navbar {
         display: flex;
         flex-direction: column;
     }
