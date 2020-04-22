@@ -37,6 +37,11 @@ app.use(cors());
 
 // Routes
 
+app.get('/', homePageRouteHandler);
+app.get('/about', (request, response) => {
+  response.render('pages/about');
+});
+
 client.connect()
   .then(() => {
     console.log('PG Connected!');
@@ -46,7 +51,7 @@ client.connect()
     errorHandler(err);
   });
 
-app.get('/', homePageRouteHandler);
+
 
 
 // Testing getting stuff from SQL database

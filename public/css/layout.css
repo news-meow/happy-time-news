@@ -30,7 +30,7 @@
 
 /* Article listings on home page */
 .article-image {
-    height: 90%;
+    height: 40%;
     width: 30%;
     padding-right: 2%;
 }
@@ -45,7 +45,8 @@
 
 .article-view-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 75%;
     margin-top: 4%;
     max-width: 100%;
@@ -55,6 +56,7 @@
 .article-listing-wrapper {
     /* height: 25%; */
     display: flex;
+    justify-content: center;
     margin-top: 5%;
     padding: 2.5%;
     margin-right: 2.5%;
@@ -67,3 +69,40 @@
     
 }
 
+@media (min-width: 600px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    .article-view-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: auto;
+        margin-top: 0%;
+        margin-left: 20%;
+    }
+
+    .article-listing-wrapper {
+        width: 45%;
+    }
+
+    .nav-bar {
+        width: 20%;
+        position: fixed;
+        left: 2%;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
