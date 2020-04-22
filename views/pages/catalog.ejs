@@ -26,10 +26,11 @@
                         <h4><%= article.source %></h4>
                     </div>
                     <p><%= article.description %></p>
+                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                        <button class="button">Remove from Catalog</button>
+                    </form>
                 </div>
-                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-                    <button class="button">Remove from Catalog</button>
-                </form>
+                
             </div>
             <% }) %>
 
