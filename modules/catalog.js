@@ -14,20 +14,14 @@ if (!process.env.DATABASE_URL) {
 
 // putting stuff in SQL database
 function setArticlesToDB(request, response) {
-  const {title, author, source, url, image_url, description} = request.body;
-  console.log(request.body);
-  const SQL = `
-    INSERT INTO articles
-    (title, author, source, url, image_url, description)
-    VALUES
-    ($1, $2, $3, $4, $5, $6)
-    RETURNING id
-    `;
-  const parameters = [title, author, source, url, image_url, description];
+  let newArticle = request.body;
+  console.log(newArticle);
+  const SQL = 'INSERT INTO articles (title, author, source, url, image_url, description) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id';
+  const parameters = [newArticle.title, newArticle.author, newArticle.source, newArticle.url, newArticle.image_url, newArticle.description];
+  console.log(parameters);
   return client.query(SQL, parameters)
-    .then( (result) => {
-      console.log('Article Saved', result);
-      // response.redirect('/');
+    .then( result => {
+      console.log('Article saved', result);
     })
     .catch(err => {
       errorHandler(err);
@@ -54,8 +48,8 @@ function setArticlesToDB(request, response) {
 // }
 
 
-module.exports = {
-  setArticlesToDB,
+module.exports =
+  setArticlesToDB
   // getArticlesFromDB
-};
+;
 

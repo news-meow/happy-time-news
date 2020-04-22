@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
-const catalogModule = require ('./modules/catalog');
+const setArticlesToDB = require('./modules/catalog');
 
-const {getArticlesFromDB, setArticlesToDB} = catalogModule;
+// const setArticlesToDB = catalogModule;
 
 // Connected to SQL database
 
@@ -46,9 +46,7 @@ app.get('/catalog', (request, response) => {
   response.render('pages/catalog');
 });
 
-app.post('/save', (request, response) => {
-  setArticlesToDB(request, response);
-});
+app.post('/save', setArticlesToDB);
 
 
 
