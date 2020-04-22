@@ -14,19 +14,13 @@ const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
 const setArticlesToDB = require('./modules/catalog');
+const client = require('./modules/db');
 
 // const setArticlesToDB = catalogModule;
 
 // Connected to SQL database
 
-const client = new pg.Client(process.env.DATABASE_URL);
-client.on('error', err => {
-  errorHandler(err);
-});
 
-if (!process.env.DATABASE_URL) {
-  throw 'DATABASE_URL is missing!';
-}
 
 
 
@@ -50,16 +44,6 @@ app.post('/save', setArticlesToDB);
 
 
 
-client.connect()
-  .then(() => {
-    console.log('PG Connected!');
-    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-  })
-  .catch(err => {
-    console.log(err);
-    errorHandler(err);
-  });
-
 
 
 app.get('*', function(request, response, next) {
@@ -70,3 +54,12 @@ app.get('*', function(request, response, next) {
 });
 
 app.use(errorHandler);
+
+client.connect()
+  .then(() => {
+    console.log('PG Connected!');
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+  })
+  .catch(err => {
+    console.log(err);
+  });
