@@ -15,6 +15,7 @@ if (!process.env.DATABASE_URL) {
 // putting stuff in SQL database
 function setArticlesToDB(request, response) {
   const {title, author, source, url, image_url, description} = request.body;
+  console.log(request.body);
   const SQL = `
     INSERT INTO articles
     (title, author, source, url, image_url, description)
@@ -24,11 +25,9 @@ function setArticlesToDB(request, response) {
     `;
   const parameters = [title, author, source, url, image_url, description];
   return client.query(SQL, parameters)
-
-    //////////////// what happens after this in this function is questionable //////////////
     .then( (result) => {
       console.log('Article Saved', result);
-      response.redirect('/pages/index');
+      // response.redirect('/');
     })
     .catch(err => {
       errorHandler(err);
