@@ -54,28 +54,6 @@ client.connect()
   });
 
 
-
-
-// Testing getting stuff from SQL database
-
-function getData(request, response) {
-  const data = 'SELECT * FROM articles;';
-
-  client.query(data)
-    .then(results => {
-      const { rowCount, rows } = results;
-      console.log(rows);
-
-      response.render('index', {
-        articles: rows
-      });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-}
-
-
 app.get('*', function(request, response, next) {
   let err = new Error(`${request.ip} tried to reach ${request.originalUrl}`);
   err.statusCode = 404;
