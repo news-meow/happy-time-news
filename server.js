@@ -56,6 +56,7 @@ client.connect()
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
   .catch(err => {
+    console.log(err);
     errorHandler(err);
   });
 
