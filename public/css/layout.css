@@ -90,10 +90,19 @@
     }
 
     .nav-bar {
+        width: 20%;
         position: fixed;
-        left: 0;
+        left: 2%;
     }
 
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .social {
+        display: flex;
+        flex-direction: column;
+    }
 
 }
