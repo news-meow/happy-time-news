@@ -30,8 +30,8 @@
 
 /* Article listings on home page */
 .article-image {
-    height: 90%;
-    width: 30%;
+    height: 50%;
+    width: 20%;
     padding-right: 2%;
 }
 
@@ -75,9 +75,6 @@
         box-sizing: border-box;
     }
 
-    body { 
-        min-width: 600px;
-    }
 
     .article-view-wrapper {
         display: flex;
@@ -88,8 +85,8 @@
 
     .article-listing-wrapper {
         background-color: pink;
-        width: 40%;
-        height: 44.4%;
+        width: 45%;
+        height: 45%;
     }
 
 }
