@@ -24,7 +24,7 @@
                 <% const regex = /(C?c?ovid( )?(-)?(19)?|COVID( )?(-)?(19)?|C?c?orona( )?(V?v?irus)?|P?p?andemic|CDC|F?f?ace( )?(M?m?ask)?)/g; %>
 
                     <% if (regex.test(article.title) == true && regex.test(article.description) == true) { %>
-                        <img src="<%= cat.url %>"
+                        <img src="<%= cat.url %>" />
                     <% } %>
 
                     <% if (regex.test(article.title) == false && regex.test(article.description) == false) { %>
@@ -43,8 +43,6 @@
                     </div>
 
                     <% }; %>
-
-                    
 
                 <% }) %>
 
