@@ -13,8 +13,9 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
+const catalogModule = require ('./modules/catalog');
 
-
+const {getArticlesFromDB, setArticlesToDB} = catalogModule;
 
 // Connected to SQL database
 
@@ -41,6 +42,13 @@ app.get('/', homePageRouteHandler);
 app.get('/about', (request, response) => {
   response.render('pages/about');
 });
+app.get('/catalog', (request, response) => {
+  response.render('pages/catalog');
+})
+
+app.get('/', getArticlesFromDB)
+
+app.post('/save', setArticlesToDB)
 
 client.connect()
   .then(() => {
@@ -53,28 +61,7 @@ client.connect()
 
 
 
-
-// Testing getting stuff from SQL database
-
-function getData(request, response) {
-  const data = 'SELECT * FROM articles;';
-
-  client.query(data)
-    .then(results => {
-      const { rowCount, rows } = results;
-      console.log(rows);
-
-      response.render('index', {
-        articles: rows
-      });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-}
-
-
-app.get('*', function (request, response, next) {
+app.get('*', function(request, response, next) {
   let err = new Error(`${request.ip} tried to reach ${request.originalUrl}`);
   err.statusCode = 404;
   err.shouldRedirect = true;
