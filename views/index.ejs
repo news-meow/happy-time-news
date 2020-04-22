@@ -21,7 +21,7 @@
 
                 <% article.forEach(article => { %>
 
-                <% const regex = /(C?c?ovid( )?(-)?(19)?|COVID( )?(-)?(19)?|C?c?orona( )?(V?v?irus)?|P?p?andemic|CDC|F?f?ace( )?(M?m?ask)?)/g; %>
+                <% const regex = /(covid( )?(-)?(19)?|COVID( )?(-)?(19)?|corona( )?(V?v?irus)?|pandemic|CDC|face( )?(mask)?)/gi; %>
 
                     <% if (regex.test(article.title) == true && regex.test(article.description) == true) { %>
                         <img src="<%= cat.url %>" />
