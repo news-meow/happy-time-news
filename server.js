@@ -13,8 +13,9 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const getNewsFromApi = require('./modules/news');
 const errorHandler = require('./modules/error');
-// const { getNewsFromApi } = newsModule;
+const catalogModule = require ('./modules/catalog');
 
+const {getArticlesFromDB, setArticlesToDB} = catalogModule;
 
 // Connected to SQL database
 
@@ -43,6 +44,10 @@ app.get('/about', (request, response) => {
 app.get('/catalog', (request, response) => {
   response.render('pages/catalog');
 })
+
+app.get('/', getArticlesFromDB)
+
+app.post('/save', setArticlesToDB)
 
 client.connect()
   .then(() => {
