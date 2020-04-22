@@ -1,33 +1,35 @@
 /* Modules for speciic styling throughout app */
 
-.navbar a {
+/* .navbar a {
     color: #EAEAEA;
     font-weight: bold;
     font-family: 'News Cycle', sans-serif;
     letter-spacing: 0.2em;
-}
-.social a {
+    text-decoration: none;
+} */
+
+/* .social a {
     color: #EAEAEA;
-}
+} */
 
 /* Header */ 
 
-.title-wrapper {
+/* .title-wrapper {
     font-family: 'News Cycle', sans-serif;
     background-color: #37323E;
     border: solid #EAEAEA 1px;
-}
+} */
 
-.title-wrapper h1 {
+/* .title-wrapper h1 {
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 2%;
-}
+} */
 
-.title-wrapper h6 {
+/* .title-wrapper h6 {
     font-size: 20px;
     padding-bottom: 2%;
-}
+} */
 
 /* Article Listings */
 
