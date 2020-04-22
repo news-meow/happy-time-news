@@ -3,24 +3,25 @@
     top: 0;
     width: 100%;
     background-color: #37323E;
-    height: 12em;
-    border-bottom: solid #EAEAEA 1px;
+    /* height: 36.5em; */
+    border-bottom: solid #EAEAEA 2px;
 }
 
 .title-wrapper {
     font-family: 'News Cycle', sans-serif;
-    border-bottom: solid #EAEAEA 1px;
+    border-bottom: solid #EAEAEA 2px;
     text-align: center;
-    height: 5em;
+    /* height: 15em; */
 }
 
 .title-wrapper h1 {
-font-size: 2.5rem;
-margin: .25em;
+font-size: 8rem;
+margin: 1%;
 }
 
 .title-wrapper h6 {
-font-size: .75rem;
+font-size: 3rem;
+margin-bottom: 2%;
 }
 
 .sidebar {
@@ -29,7 +30,8 @@ font-size: .75rem;
 
 .navbar li {
     display: inline-block;
-    padding: 1em;
+    font-size: 2rem;
+    padding: 3% 8%;
 }
 
 .navbar a {
@@ -42,12 +44,13 @@ font-size: .75rem;
 
 .social li {
     display: inline-block;
-    padding: 1em 2em;
+    font-size: 3rem;
+    padding: 4% 8%;
 }
 .social a {
     color: #EAEAEA;
 }
 
 .article-view-wrapper {
-    margin-top: 12em;
+    margin-top: 20vh;
 }
