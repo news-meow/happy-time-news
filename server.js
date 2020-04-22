@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
-const catalogModule = require ('./modules/catalog');
+const setArticlesToDB = require('./modules/catalog');
 
-const {getArticlesFromDB, setArticlesToDB} = catalogModule;
+// const setArticlesToDB = catalogModule;
 
 const deleteArticlesFromDB = require('./modules/delete')
 
@@ -46,11 +46,12 @@ app.get('/about', (request, response) => {
 });
 app.get('/catalog', (request, response) => {
   response.render('pages/catalog');
-})
+});
+
+app.post('/save', setArticlesToDB);
 
 app.delete('/catalog/id', deleteArticlesFromDB);
 
-app.post('/save', setArticlesToDB)
 
 client.connect()
   .then(() => {
@@ -58,6 +59,7 @@ client.connect()
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
   .catch(err => {
+    console.log(err);
     errorHandler(err);
   });
 
