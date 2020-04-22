@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');
-const getNewsFromApi = require('./modules/news');
+const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
 const catalogModule = require ('./modules/catalog');
 
@@ -37,7 +37,8 @@ app.use(methodOverride('_method'));
 app.use(cors());
 
 // Routes
-app.get('/', getNewsFromApi);
+
+app.get('/', homePageRouteHandler);
 app.get('/about', (request, response) => {
   response.render('pages/about');
 });
@@ -54,9 +55,10 @@ client.connect()
     console.log('PG Connected!');
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
-  .catch(err => { 
+  .catch(err => {
     errorHandler(err);
   });
+
 
 
 app.get('*', function(request, response, next) {
