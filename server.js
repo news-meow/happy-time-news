@@ -48,7 +48,7 @@ app.get('/catalog', (request, response) => {
   response.render('pages/catalog');
 })
 
-app.delete('catalog/id', deleteArticlesFromDB);
+app.delete('/catalog/id', deleteArticlesFromDB);
 
 app.post('/save', setArticlesToDB)
 
