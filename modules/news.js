@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const errorHandler = require('./error');
 
 //Regex covid filter
-const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?)/gi;
+const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?|quarantin(e|ing))/gi;
 
 // news route handler
 function homePageRouteHandler(request, response) {
