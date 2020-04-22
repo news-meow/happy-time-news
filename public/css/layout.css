@@ -56,6 +56,7 @@
 .article-listing-wrapper {
     /* height: 25%; */
     display: flex;
+    justify-content: center;
     margin-top: 5%;
     padding: 2.5%;
     margin-right: 2.5%;
@@ -70,8 +71,25 @@
 
 @media (min-width: 600px) {
 
-    .sidebar {
+    * {
+        box-sizing: border-box;
     }
 
+    body { 
+        min-width: 600px;
+    }
+
+    .article-view-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: auto;
+    }
+
+    .article-listing-wrapper {
+        background-color: pink;
+        width: 40%;
+        height: 44.4%;
+    }
 
 }
