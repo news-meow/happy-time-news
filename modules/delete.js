@@ -11,7 +11,7 @@ function deleteArticlesFromDB(request, response) {
 
     client.query(SQL, [request.params.id])
         .then(() => response.redirect('/catalog'))
-        .catch(error => errorHandler(error, request, response))
+        .catch(err => errorHandler(err, request, response))
 }
 
 module.exports = deleteArticlesFromDB;

@@ -1,8 +1,7 @@
 'use strict';
 
 const superagent = require('superagent');
-// const client = require ('../utilities.database');
-// const errorHandler = require('./error');
+const errorHandler = require('./error');
 
 //Regex covid filter
 const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?)/gi;
@@ -39,8 +38,7 @@ function homePageRouteHandler(request, response) {
         })
     })
     .catch(err => {
-      console.error(err);
-      next(err);
+      errorHandler(err, request, response);
     });
 }
 
