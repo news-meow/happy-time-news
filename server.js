@@ -37,6 +37,9 @@ app.use(cors());
 
 // Routes
 app.get('/', getNewsFromApi);
+app.get('/about', (request, response) => {
+  response.render('pages/about');
+});
 
 client.connect()
   .then(() => {
