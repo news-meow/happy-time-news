@@ -11,37 +11,37 @@
         <header>
             <%- include('./layout/header') %>
         </header>
+        <main>
 
-        <article class="article-view-wrapper">
+            <article class="article-view-wrapper">
 
-            <% articles.forEach(article => { %>
+                <% articles.forEach(article => { %>
 
-            <% if (article.isCovid) { %>
-            <img src="<%= article.catGif.url %>" />
-            <% } else { %>
-            <div class="article-listing-wrapper">
-                <img class="article-image" src="<%= article.image_url %>" />
-                <div class="article-words-wrapper">
-                    <a href="<%= article.url %>">
-                        <h2> <%= article.title %> </h2>
-                    </a>
-                    <div class="article-author-source-wrapper">
-                        <h3><%= article.author %></h3>
-                        <h4><%= article.source %></h4>
+                <% if (article.isCovid) { %>
+                <img src="<%= article.catGif.url %>" />
+                <% } else { %>
+                <div class="article-listing-wrapper">
+                    <img class="article-image" src="<%= article.image_url %>" />
+                    <div class="article-words-wrapper">
+                        <a href="<%= article.url %>">
+                            <h2> <%= article.title %> </h2>
+                        </a>
+                        <div class="article-author-source-wrapper">
+                            <h3><%= article.author %></h3>
+                            <h4><%= article.source %></h4>
+                        </div>
+                        <p><%= article.description %></p>
+                        <button class="button">Save for later</button>
                     </div>
-                    <p><%= article.description %></p>
-                    <button class="button">Save for later</button>
                 </div>
-            </div>
 
-            <% }; %>
+                <% }; %>
 
-            <% }) %>
+                <% }) %>
 
-        </article>
-
+            </article>
+        </main>
     </div>
-
 </body>
 
 </html>
