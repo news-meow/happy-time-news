@@ -42,11 +42,11 @@ client.connect()
     console.log('PG Connected!');
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
-  .catch(err => { 
+  .catch(err => {
     errorHandler(err);
   });
 
-  app.get('/', homePageRouteHandler);
+app.get('/', homePageRouteHandler);
 
 
 // Testing getting stuff from SQL database
@@ -69,7 +69,7 @@ function getData(request, response) {
 }
 
 
-app.get('*', function(request, response, next) {
+app.get('*', function (request, response, next) {
   let err = new Error(`${request.ip} tried to reach ${request.originalUrl}`);
   err.statusCode = 404;
   err.shouldRedirect = true;

@@ -4,38 +4,39 @@ const superagent = require('superagent');
 // const client = require ('../utilities.database');
 // const errorHandler = require('./error');
 
+//Regex covid filter
+const regex = /(covid( )?(-)?(19)?|COVID( )?(-)?(19)?|corona( )?(V?v?irus)?|pandemic|CDC|face( )?(mask)?)/gi;
+
 // news route handler
 function homePageRouteHandler(request, response) {
     const newsUrl = 'http://newsapi.org/v2/top-headlines';
     const catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
 
-    Promise.all([
-        superagent.get(newsUrl)             // First promise for index route handler
-            .query({
-                country: 'us',
-                apiKey: process.env.NEWS_API,
-            })
-            .then(newsResponse => {
-                let news = newsResponse.body;
-                let newsReturn = news.articles.map(article => {
-                    return new Article(article);
+    superagent.get(newsUrl)
+        .query({
+            country: 'us',
+            apiKey: process.env.NEWS_API,
+        })
+        .then(newsResponse => {
+            let news = newsResponse.body;
+            let articles = news.articles.map(article => new Article(article));
+            return Promise.all(articles.map(eachArticle =>
+                eachArticle.isCovid ?
+                    superagent.get(catUrl)
+                        .set('Authorization', `x-api-key ${process.env.CATS_API}`)
+                        .then(catsResponse => {
+                            const catsData = catsResponse.body;
+                            const catGif = new Cat(catsData[0]);
+                            return catGif;
+                        }) : Promise.resolve(null)
+            ))
+                .then(catResults => {
+                    console.log(catResults);
+                    articles.forEach((article, index) => {
+                        article.catGif = catResults[index];
+                    });
+                    response.render('index', { articles });
                 })
-                return newsReturn;
-            }),
-        superagent.get(catUrl)              // Second superagent promise for index route handler
-            .set('Authorization', `x-api-key ${process.env.CATS_API}`)
-            .then(catsResponse => {
-                const catsData = catsResponse.body;
-                const catGif = new Cat(catsData[0]);
-                return catGif;
-            })
-    ])
-        .then(([newsResults, catsResults]) => {
-            let viewModel = {
-                article: newsResults,
-                cat: catsResults
-            };
-            response.render('index', viewModel);
         })
         .catch(err => {
             console.error(err);
@@ -52,6 +53,7 @@ function Article(googleData) {
     this.author = googleData.author;
     this.source = googleData.source.name;
     this.description = googleData.description;
+    this.isCovid = regex.test(googleData.title + ' ' + googleData.description);
 }
 
 function Cat(catsData) {
