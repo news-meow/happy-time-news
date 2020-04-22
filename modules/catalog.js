@@ -14,6 +14,7 @@ function setArticlesToDB(request, response) {
   console.log(parameters);
   client.query(SQL, parameters)
     .then(result => {
+      response.redirect('/');
       console.log('Article saved');
     })
 
@@ -23,27 +24,27 @@ function setArticlesToDB(request, response) {
 }
 
 
-// getting stuff from SQL database
-// function getArticlesFromDB(request, response) {
-//   const SQL = 'SELECT * FROM articles;';
 
-//   client.query(SQL)
-//     .then(results => {
-//       const { rowCount, rows } = results;
-//       console.log(rows);
+function getArticlesFromDB(request, response) {
+  const SQL = 'SELECT * FROM articles;';
 
-//       response.render('pages/catalog', {
-//         articles: rows
-//       });
-//     })
-//     .catch(err => {
-//       errorHandler(err);
-//     });
-// }
+  client.query(SQL)
+    .then(results => {
+      const { rowCount, rows } = results;
+      console.log(rows);
+
+      response.render('pages/catalog', {
+        articles: rows
+      });
+    })
+    .catch(err => {
+      errorHandler(err);
+    });
+}
 
 
-module.exports =
-  setArticlesToDB
-  // getArticlesFromDB
-;
+module.exports = {
+  setArticlesToDB,
+  getArticlesFromDB
+};
 

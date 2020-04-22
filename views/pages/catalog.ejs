@@ -1,17 +1,17 @@
 <!-- User's saved articles page -->
 <!DOCTYPE html>
     <head>
-        <%- include('./layout/head') %>
+        <%- include('../layout/head') %>
     </head>
     <body>
         <div class="content-wrapper">
 
             <header>
-                <%- include('./layout/header') %>
+                <%- include('../layout/header') %>
             </header>
 
             <div class="article-view-wrapper">
-                <% article.forEach(CATALOG => { %>
+                <% articles.forEach(article => { %>
                     <div class="article-listing-wrapper">
                         <img class="article-image" src="<%= article.image_url %>" />
                         <div class="article-words-wrapper">
@@ -21,7 +21,6 @@
                                 <h4><%= article.source %></h4>
                             </div>
                                 <p><%= article.description %></p>
-                                <button class="button">Save for later</button>
                         </div>
                     </div>
                 <% }) %>
