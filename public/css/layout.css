@@ -82,10 +82,18 @@
         flex-wrap: wrap;
         flex: auto;
         margin-top: 0%;
+        margin-left: 20%;
     }
 
     .article-listing-wrapper {
         width: 45%;
     }
+
+    .nav-bar {
+        position: fixed;
+        left: 0;
+    }
+
+
 
 }
