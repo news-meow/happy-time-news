@@ -30,8 +30,8 @@
 
 /* Article listings on home page */
 .article-image {
-    height: 50%;
-    width: 20%;
+    height: 40%;
+    width: 30%;
     padding-right: 2%;
 }
 
@@ -81,12 +81,11 @@
         flex-direction: row;
         flex-wrap: wrap;
         flex: auto;
+        margin-top: 0%;
     }
 
     .article-listing-wrapper {
-        background-color: pink;
         width: 45%;
-        height: 45%;
     }
 
 }
