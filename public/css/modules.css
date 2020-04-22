@@ -55,7 +55,27 @@
     transition: 0.3s;
     text-decoration: none;
     cursor: pointer;
-  }
+}
   
-  .button:hover {opacity: 1}
+.button:hover {
+    opacity: 1
+}
+/*----------- cat GIFS ------------*/
+.cat-gif {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    /* padding: 2.5%; */
+    margin-right: 2.5%;
+    height: 25%;
+}
 
+/*----------- About Us -------------*/
+.profile-img-wrapper {
+    width: auto;
+    margin-right: 2%;
+}
+
+.profile-image {
+    width: 6em;
+}

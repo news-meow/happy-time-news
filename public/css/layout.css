@@ -29,10 +29,17 @@
 }
 
 /* Article listings on home page */
+
+.img-wrapper {
+    overflow: hidden;
+    width:40%;
+    height:80%;
+    margin-right: 2%;
+
+}
+
 .article-image {
-    height: 40%;
-    width: 30%;
-    padding-right: 2%;
+    width: 150%;
 }
 
 .article-words-wrapper a {
@@ -50,7 +57,7 @@
     height: 75%;
     margin-top: 4%;
     max-width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .article-listing-wrapper {
