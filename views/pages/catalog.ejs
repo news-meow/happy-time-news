@@ -13,6 +13,7 @@
         </header>
 
         <div class="article-view-wrapper">
+            
             <% articles.forEach(article => { %>
             <div class="article-listing-wrapper">
                 <img class="article-image" src="<%= article.image_url %>" />
@@ -26,6 +27,9 @@
                     </div>
                     <p><%= article.description %></p>
                 </div>
+                <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                    <button class="button">Remove from Catalog</button>
+                </form>
             </div>
             <% }) %>
 

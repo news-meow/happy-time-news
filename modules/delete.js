@@ -1,6 +1,8 @@
 'use strict';
 
 const errorHandler = require('./error');
+const client = require('./db');
+
 
 function deleteArticlesFromDB(request, response) {
     console.log(request.params);

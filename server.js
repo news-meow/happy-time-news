@@ -43,7 +43,7 @@ app.get('/catalog', getArticlesFromDB);
 
 app.post('/save', setArticlesToDB);
 
-app.delete('/catalog/id', deleteArticlesFromDB);
+app.delete('/articles/:id', deleteArticlesFromDB);
 
 
 
