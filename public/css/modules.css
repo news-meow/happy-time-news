@@ -33,6 +33,7 @@
 .cat-gif {
     margin: 2%;
     max-width: 96%;
+    max-height: 200px;
     border: solid white 1px;
 }
 
