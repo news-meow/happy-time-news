@@ -24,12 +24,9 @@ function setArticlesToDB(request, response) {
         const parameters = [newArticle.title, newArticle.author, newArticle.source, newArticle.url, newArticle.image_url, newArticle.description];
         return client.query(SQL, parameters)
           .then(result => {
-            let id = result.rows[0].id;
             response.redirect('/');
           })
       } else {
-        console.log('You already saved this!')
-        let id = verifiedResult.rows[0].id;
         response.redirect('/');
       }
     })
@@ -44,8 +41,6 @@ function getArticlesFromDB(request, response) {
   client.query(SQL)
     .then(results => {
       const { rowCount, rows } = results;
-      console.log(rows);
-
       response.render('pages/catalog', {
         articles: rows
       });
