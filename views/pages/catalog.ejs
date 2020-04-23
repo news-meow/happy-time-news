@@ -29,6 +29,7 @@
                     </div>
                     <p><%= article.description %></p>
                     <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="redirectUrl" value="/catalog">
                         <button class="button">Send to Litterbox</button>
                     </form>
                 </div>

@@ -32,6 +32,12 @@
                         <h4><%= article.source %></h4>
                     </div>
                     <p><%= article.description %></p>
+                    <% if (article.isSaved) { %> 
+                        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                            <input type="hidden" name="redirectUrl" value="/">
+                            <button class="button">Send to Litterbox</button>
+                        </form>
+                    <% } else { %> 
                     <form action="/save" method="POST">
                         <input type="hidden" name="image_url" value='<%= article.image_url %>' />
                         <input type="hidden" name="url" value='<%= article.url %>' />
@@ -41,6 +47,7 @@
                         <input type="hidden" name="description" value='<%= article.description %>' />
                         <button class="button">Save for later</button>
                     </form>
+                    <% } %>
                 </div>
             </article>
 
@@ -51,7 +58,6 @@
         </main>
        
     </div>
-
     <footer class="footer">
         <%- include('./layout/footer') %>
     </footer>

@@ -2,6 +2,7 @@
 
 const superagent = require('superagent');
 const errorHandler = require('./error');
+const client = require('./db');
 
 //Regex covid filter
 const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?|quarantin(e|ing)|(un)?employment|economy)/i;
@@ -19,6 +20,22 @@ function homePageRouteHandler(request, response) {
     .then(newsResponse => {
       let news = newsResponse.body;   // Get response from news API
       let articles = news.articles.map(article => new Article(article));
+      return articles;
+    })
+    .then(articles => {
+      const SQL = `SELECT url, id FROM articles`;
+      return client.query(SQL)
+        .then(results => {
+          const saved = new Map(results.rows.map(row => [row.url, row.id]));
+          articles.forEach(article => {
+            article.isSaved = saved.has(article.url);
+            article.id = saved.get(article.url);
+          })
+          return articles;
+        })
+    })
+
+    .then(articles => {
       return Promise.all(articles.map(eachArticle =>  // Filtering through all articles
         eachArticle.isCovid ?
           superagent.get(catUrl)  // Call cat API if regex test is true
