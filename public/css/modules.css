@@ -34,11 +34,11 @@
 /* Article Listings */
 
 .article-view-wrapper {
-    color: #0D1F2D;
+    color: rgb(0, 0, 0);
 }
 
 .article-listing-wrapper {
-    background-color: #EAEAEA;
+    background-color: #ffffff;
 }
 
 .article-author-source-wrapper {
@@ -48,13 +48,13 @@
 .button {
     margin-left: 70%;
     margin-top: 1%;
-    background-color: #444054;
+    background-color: #56cbf9;
     border: none;
     color: white;
     text-align: center;
     font-size: 12px;
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.5s;
     text-decoration: none;
     cursor: pointer;
 }
@@ -64,9 +64,9 @@
 }
 /*----------- cat GIFS ------------*/
 .cat-gif {
-    margin: 2% auto;
-    max-width: 100%;
-    overflow: hidden;
+    margin: 2%;
+    max-width: 96%;
+    border: solid white 1px;
 }
 
 /*----------- About Us -------------*/

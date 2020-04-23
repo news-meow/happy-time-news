@@ -8,6 +8,9 @@ body {
     min-width: 350px;
     height: 100vh;
     margin: 0 auto;
-    background-color: #0D1F2D;
-    color: #EAEAEA;
+    color: #ffffff;
+}
+
+main {
+    background: linear-gradient(to bottom right, rgb(252, 188, 184), rgb(197, 124, 118), rgb(146, 73, 68));
 }

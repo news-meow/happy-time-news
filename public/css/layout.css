@@ -1,11 +1,19 @@
 /* Layout stylesheet for all pages */
 
+/*------- colors ----------- 
+white = #ffffff
+green = #a7e8bd
+pink = #fcbcb8
+blue = #56cbf9
+yellow = #ffd972 
+--------------------------*/
+
 .content-wrapper {
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-/* Header stuff */
+/*----------- Header ----------*/
 
 .title-wrapper {
     text-align: center;
