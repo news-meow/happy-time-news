@@ -2,6 +2,6 @@
 
 $( document ).ready(function() {
   $(".button").click(function() {
-    $(".alert").show();
+    alert("An article has been saved to your CAT-alog");
   });
 });
