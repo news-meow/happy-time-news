@@ -13,20 +13,17 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const homePageRouteHandler = require('./modules/news');
 const errorHandler = require('./modules/error');
-const catalogModule = require ('./modules/catalog');
+const catalogModule = require('./modules/catalog');
+const client = require('./modules/db');
 
-const {getArticlesFromDB, setArticlesToDB} = catalogModule;
+const { setArticlesToDB, getArticlesFromDB } = catalogModule;
+
+
+const deleteArticlesFromDB = require('./modules/delete')
 
 // Connected to SQL database
 
-const client = new pg.Client(process.env.DATABASE_URL);
-client.on('error', err => {
-  errorHandler(err);
-});
 
-if (!process.env.DATABASE_URL) {
-  throw 'DATABASE_URL is missing!';
-}
 
 
 
@@ -42,22 +39,12 @@ app.get('/', homePageRouteHandler);
 app.get('/about', (request, response) => {
   response.render('pages/about');
 });
-app.get('/catalog', (request, response) => {
-  response.render('pages/catalog');
-})
+app.get('/catalog', getArticlesFromDB);
 
-app.get('/', getArticlesFromDB)
+app.post('/save', setArticlesToDB);
 
-app.post('/save', setArticlesToDB)
+app.delete('/articles/:id', deleteArticlesFromDB);
 
-client.connect()
-  .then(() => {
-    console.log('PG Connected!');
-    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-  })
-  .catch(err => {
-    errorHandler(err);
-  });
 
 
 
@@ -69,3 +56,12 @@ app.get('*', function(request, response, next) {
 });
 
 app.use(errorHandler);
+
+client.connect()
+  .then(() => {
+    console.log('PG Connected!');
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+  })
+  .catch(err => {
+    console.log(err);
+  });
