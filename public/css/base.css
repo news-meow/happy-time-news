@@ -21,5 +21,6 @@ body {
 }
 
 .content-wrapper{
+    min-height: 100vh;
     background: linear-gradient(to bottom right, rgb(255, 223, 221), rgb(252, 174, 167), rgb(255, 127, 118));
 }
