@@ -1,24 +1,32 @@
 <!-- Error View Cat Page -->
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
 
-    <%- include('../layout/head') %>
-  </head>
+<head>
+
+  <%- include('../layout/head') %>
+</head>
+
 <body>
-  <header>
+  <div class="content-wrapper">
 
-    <%- include('../layout/header') %>
-    
-  </header>
-  <main class="error">
+    <header>
 
-    <img src="<%= badCat %>" />
-    
-  </main>
-  
+      <%- include('../layout/header') %>
+
+    </header>
+    <main class="article-view-wrapper error">
+
+      <img src="<%= badCat %>" />
+
+    </main>
+
+  </div>
+
   <footer class="footer">
     <%- include('./layout/footer') %>
-</footer>
+  </footer>
+
 </body>
+
 </html>
