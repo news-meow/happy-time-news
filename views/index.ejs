@@ -34,6 +34,7 @@
                     <p><%= article.description %></p>
                     <% if (article.isSaved) { %> 
                         <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                            <input type="hidden" name="redirectUrl" value="/">
                             <button class="button">Send to Litterbox</button>
                         </form>
                     <% } else { %> 
@@ -57,7 +58,6 @@
         </main>
        
     </div>
-    <!-- <script type="text/javascript" src="/js/button.js"></script> -->
     <footer class="footer">
         <%- include('./layout/footer') %>
     </footer>
