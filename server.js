@@ -19,6 +19,8 @@ const client = require('./modules/db');
 const { setArticlesToDB, getArticlesFromDB } = catalogModule;
 
 
+const deleteArticlesFromDB = require('./modules/delete')
+
 // Connected to SQL database
 
 
@@ -41,6 +43,7 @@ app.get('/catalog', getArticlesFromDB);
 
 app.post('/save', setArticlesToDB);
 
+app.delete('/articles/:id', deleteArticlesFromDB);
 
 
 
