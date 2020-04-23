@@ -17,6 +17,13 @@
     width: 100%;
     background: linear-gradient(to bottom right, rgb(86, 203, 249), rgb(45, 164, 211), rgb(31, 134, 175));
     border-bottom: solid #ffffff 2px;
+    z-index: 1;
+}
+
+.header-img {
+    width: 75px;
+    float: left;
+    margin-right: -75px;
 }
 
 .title-wrapper {
@@ -30,6 +37,8 @@
 font-size: 2.5rem;
 font-weight: 700;
 margin: 10px 2%;
+/* display: inline-block; */
+
 }
 
 .title-wrapper h6 {
@@ -50,11 +59,12 @@ letter-spacing: 0.1em;
 
 .navbar li {
     font-size: .75rem;
-    padding: 10px 2%;
+    padding: 10px 20px;
+    border-radius: 20%;
 }
 
 .navbar a {
-    color: #EAEAEA;
+    color: #ffffff;
     font-weight: bold;
     font-family: 'News Cycle', sans-serif;
     letter-spacing: 0.2em;
@@ -68,10 +78,15 @@ letter-spacing: 0.1em;
 
 .social li {
     display: inline-block;
-    padding: 10px 7%;
+    padding: 20px;
+    border-radius: 50%;
 }
 .social a {
     color: #ffffff;
+}
+
+li:hover {
+    background: #a7e8bd;
 }
 
 .spacer{
@@ -117,6 +132,18 @@ letter-spacing: 0.1em;
 }
 
 .article-words-wrapper h2 {
-    padding-bottom: 2%;
-    
+    padding-bottom: 2%;   
 }
+
+.footer {
+    width: 100%;
+    background: linear-gradient(to bottom right, rgb(86, 203, 249), rgb(45, 164, 211), rgb(31, 134, 175));
+    border-top: solid #ffffff 2px;
+    text-align: center;
+}
+
+.footer p {
+    padding: 1%;
+}
+
+@media (min-width)

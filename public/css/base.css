@@ -5,12 +5,12 @@
 }
 
 body {
-    min-width: 350px;
+    min-width: 400px;
     height: 100vh;
     margin: 0 auto;
     color: #ffffff;
 }
 
-main {
+.content-wrapper{
     background: linear-gradient(to bottom right, rgb(252, 188, 184), rgb(197, 124, 118), rgb(146, 73, 68));
 }
