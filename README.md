@@ -8,6 +8,15 @@ Coronavirus, being a pandemic, is ever present in the news and most all anyone t
 
 Utilizing the google news API and a cat memes API, we will deliver a selection of articles that the user can browse and save for future reading.  These articles will filter out any Covid related news for the user to stay in touch with what else is happing in the world.  There will be a page that renders all of the articles that the user saved into the DB, as well as a simple about us page.  There will be cat memes sprinkled through to create a happy and up beat user experience and environment.  By the end of it, our MVP will be a news portal that allows the user to find a more pleasant experience away from all of the pandemic drama happening around the world, but also a news portal that allows the user to stay up and up with the fast moving times we live in.
 
+### Server Dependencies
+
+- Node.js
+- Express
+- Postgres
+- Method Override
+- EJS
+- Cors
+
 ### Stretch Goals
 
 - Filter by region as well
@@ -21,6 +30,7 @@ Utilizing the google news API and a cat memes API, we will deliver a selection o
 - [Trello](https://trello.com/b/0b8LvqDa/happy-time-news)
 - [Gooogle News API](https://newsapi.org/)
 - [Cat API](https://docs.thecatapi.com/)
+- [Cat Error Page](http.cat)
 
 ### Team Docs
 

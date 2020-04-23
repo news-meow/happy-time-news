@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const errorHandler = require('./error');
 
 //Regex covid filter
-const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|coronavirus|pandemic|CDC|face( )?(mask)?|quarantin(e|ing))/gi;
+const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?|quarantin(e|ing)|(un)?employment|economy)/i;
 
 // news route handler
 function homePageRouteHandler(request, response) {
@@ -17,19 +17,19 @@ function homePageRouteHandler(request, response) {
       apiKey: process.env.NEWS_API,
     })
     .then(newsResponse => {
-      let news = newsResponse.body;
+      let news = newsResponse.body;   // Get response from news API
       let articles = news.articles.map(article => new Article(article));
-      return Promise.all(articles.map(eachArticle =>
+      return Promise.all(articles.map(eachArticle =>  // Filtering through all articles
         eachArticle.isCovid ?
-          superagent.get(catUrl)
+          superagent.get(catUrl)  // Call cat API if regex test is true
             .set('Authorization', `x-api-key ${process.env.CATS_API}`)
             .then(catsResponse => {
               const catsData = catsResponse.body;
               const catGif = new Cat(catsData[0]);
               return catGif;
-            }) : Promise.resolve(null)
+            }) : Promise.resolve(null)  // Return article if regex test is false
       ))
-        .then(catResults => {
+        .then(catResults => {  // Setting covid articles as catGif before sending viewModel to EJS
           articles.forEach((article, index) => {
             article.catGif = catResults[index];
           });

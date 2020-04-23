@@ -46,7 +46,7 @@ function getArticlesFromDB(request, response) {
       });
     })
     .catch(err => {
-      errorHandler(err);
+      errorHandler(err, request, response);
     });
 }
 
