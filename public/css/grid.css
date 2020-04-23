@@ -145,7 +145,7 @@ letter-spacing: 0.1em;
 
 .button {
     margin-left: 60%;
-    margin-top: 5%;
+    margin-top: 2%;
     background-color: #137023;
     border-right: solid grey 1px;
     border-bottom: solid grey 1px;
@@ -174,6 +174,7 @@ letter-spacing: 0.1em;
 
 .footer p {
     padding: 1%;
+    font-size: .75em;
     font-family: 'News Cycle', sans-serif;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -184,7 +185,8 @@ letter-spacing: 0.1em;
 /*-----------Desktop Header-----------*/
     .header-img {
         width: 100px;
-        margin-left: 5vh;
+        margin-left: 30px;
+        margin-right: -100px;
     }
 
     .title-wrapper {
@@ -208,7 +210,7 @@ letter-spacing: 0.1em;
         width: 75px;
         border-right: solid #fff 1px;
         background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
-        z-index: 1;
+        z-index: -1;
     }
 
     .navbar ul {
@@ -250,6 +252,7 @@ letter-spacing: 0.1em;
 /*---------- Desktop Articles -----------*/
     .article-view-wrapper {
         margin-left: 150px;
+        max-width: calc(100% - 150px);
         display: grid;
         grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
         justify-items: center;
