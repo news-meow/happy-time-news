@@ -12,6 +12,10 @@
 }
 
 /*----------- About Us -------------*/
+.article-listing-wrapper.profile {
+    height: 275px;
+}
+
 .profile-img-wrapper {
     width: auto;
     margin-right: 2%;
@@ -19,4 +23,8 @@
 
 .profile-image {
     width: 6em;
+}
+
+.article-listing-wrapper.profile p {
+    height: 200px;
 }

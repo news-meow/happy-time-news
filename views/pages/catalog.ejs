@@ -12,10 +12,10 @@
             <%- include('../layout/header') %>
         </header>
 
-        <div class="article-view-wrapper">
+        <main class="article-view-wrapper">
             
             <% articles.forEach(article => { %>
-            <div class="article-listing-wrapper">
+            <article class="article-listing-wrapper">
                 <img class="article-image" src="<%= article.image_url %>" />
                 <div class="article-words-wrapper">
                     <a href="<%= article.url %>" target="_blank">
@@ -31,14 +31,16 @@
                     </form>
                 </div>
                 
-            </div>
+            </article>
             <% }) %>
 
-        </div>
+        </main>
 
 
     </div>
-
+    <footer class="footer">
+        <%- include('../layout/footer') %>
+    </footer>
 </body>
 
 </html>
