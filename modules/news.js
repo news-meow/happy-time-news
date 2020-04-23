@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const errorHandler = require('./error');
 
 //Regex covid filter
-const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|pandemic|CDC|face( )?(mask)?|quarantin(e|ing))/gi;
+const regex = /(covid( )?(-)?(19)?|corona( )?(virus)?|coronavirus|pandemic|CDC|face( )?(mask)?|quarantin(e|ing))/gi;
 
 // news route handler
 function homePageRouteHandler(request, response) {
@@ -30,7 +30,6 @@ function homePageRouteHandler(request, response) {
             }) : Promise.resolve(null)
       ))
         .then(catResults => {
-          console.log(catResults);
           articles.forEach((article, index) => {
             article.catGif = catResults[index];
           });

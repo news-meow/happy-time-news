@@ -1,108 +1,269 @@
 /* Layout stylesheet for all pages */
+/* Layout Styles */
 
-.content-wrapper {
-    margin-top: 5%;
-    margin-bottom: 5%;
+/*------- colors & fonts -------- 
+white = #ffffff
+green = #a7e8bd
+pink = #fcbcb8
+blue = #56cbf9
+yellow = #ffd972 
+
+font-family: 'News Cycle', sans-serif;
+-------------------------*/
+
+/*------- Header --------*/
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
+    border-bottom: solid #ffffff 2px;
+    z-index: 99;
 }
 
-/* Header stuff */
+.header-img {
+    width: 75px;
+    float: left;
+    margin-right: -75px;
+}
 
 .title-wrapper {
+    font-family: 'News Cycle', sans-serif;
+    border-bottom: solid #ffffff 2px;
     text-align: center;
-    margin-bottom: 2.5%;
+    height: 11vh;
 }
 
+.title-wrapper h1 {
+font-size: 2.5rem;
+font-weight: 700;
+margin: 10px 2%;
+}
+
+.title-wrapper h6 {
+font-size: .75rem;
+margin-bottom: 10px;
+letter-spacing: 0.1em;
+}
+
+/*------- Navigation & Social ------*/
 .sidebar {
+    text-align: center;
+    height: 11vh;
+}
+
+.navbar ul {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 2.5%;
+    text-align: center;
+
 }
 
-.sidebar a {
+.navbar a {
+    color: #ffffff;
+    font-size: .75rem;
+    margin: 10px 5px;
+    font-weight: bold;
+    font-family: 'News Cycle', sans-serif;
+    letter-spacing: 0.2em;
     text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 20%;
+    color: #000;
 }
 
 .social {
-    padding-top: 2%;
     display: flex;
     justify-content: space-around;
 }
 
-/* Article listings on home page */
-.article-image {
-    height: 40%;
-    width: 30%;
-    padding-right: 2%;
+.social a {
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    color: #000;
 }
 
-.article-words-wrapper a {
-    text-align: center;
+/*-------------- Spacer ---------------*/
+.spacer{
+    width:100%;
+    height: 22vh;
 }
 
-.article-words-wrapper h2 {
-    padding-bottom: 2%;
-}
-
+/*--------- Article Listings ----------*/
 .article-view-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 75%;
-    margin-top: 4%;
+    margin: 0 auto;
+    color: #000;
+    padding-top: 2%;
+    text-align: center;
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 .article-listing-wrapper {
-    /* height: 25%; */
     display: flex;
     justify-content: center;
-    margin-top: 5%;
-    padding: 2.5%;
-    margin-right: 2.5%;
+    font-family: 'News Cycle', sans-serif;
+    letter-spacing: 0.05em;
+    background-color: #ffffff;
+    margin: 2%;
+    padding: 2%;
+    height: 200px;
+    border-right: solid grey 1px;
+    border-bottom: solid grey 1px;
 }
 
 .article-author-source-wrapper {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 2%;
-    
+    color: #a8a4a4;
+}
+
+.img-wrapper {
+    overflow: hidden;
+    width:50%;
+    height:90%;
+    margin-right: 2%;   
+}
+
+.article-image {
+    width: 150px;
+}
+
+.article-words-wrapper {
+    text-align: center;
+}
+
+.article-words-wrapper h2 {
+    padding-bottom: 2%;
+    font-weight: 700;   
+}
+
+.article-words-wrapper p {
+    height: 75px;
+    overflow: hidden;
+}
+
+.button {
+    margin-left: 60%;
+    margin-top: 2%;
+    background-color: #137023;
+    border-right: solid grey 1px;
+    border-bottom: solid grey 1px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-decoration: none;
+    padding: 0 15px;
+    cursor: pointer;
+
+}
+  
+.button:hover {
+    opacity: 1
+}
+
+/*------------- footer -------------*/
+.footer {
+    width: 100%;
+    background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
+    border-top: solid #ffffff 2px;
+    text-align: center;
+}
+
+.footer p {
+    padding: 1%;
+    font-size: .75em;
+    font-family: 'News Cycle', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
 }
 
 @media (min-width: 600px) {
 
-    * {
-        box-sizing: border-box;
+/*-----------Desktop Header-----------*/
+    .header-img {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: -100px;
     }
 
-
-    .article-view-wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        flex: auto;
-        margin-top: 0%;
-        margin-left: 20%;
+    .title-wrapper {
+        border: none;
     }
 
-    .article-listing-wrapper {
-        width: 45%;
-    }
+    .title-wrapper h1 {
+        font-size: 3.5rem;
+        }
+        
+        .title-wrapper h6 {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+        }
 
-    .nav-bar {
-        width: 20%;
-        position: fixed;
-        left: 2%;
-    }
-
+/*-------- Desktop Sidebar ------------*/
     .sidebar {
-        display: flex;
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 75px;
+        border-right: solid #fff 1px;
+        background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
+        z-index: -1;
+    }
+
+    .navbar ul {
+        margin-top: 20px;
         flex-direction: column;
+    }
+
+    .navbar ul a {
+        background: #a7e8bd;
+        font-size: 1em;
+        width: 115px;
+        padding: .5em;
+        margin: 10px 0 10px 25px;
+        border: solid #ffffff 1px;
+        border-radius: 10%;
     }
 
     .social {
-        display: flex;
+        margin-top: 40px;
         flex-direction: column;
     }
 
+    .social a {
+        background: #a7e8bd;
+        font-size: 1.5em;
+        width: 70px;
+        height: 70px;
+        padding: 1em .5em;
+        margin: 10px 0 10px 40px;
+        border: solid #ffffff 1px;
+        border-radius: 50%;
+    }
+
+/*----------- Desktop Spacer ------------*/
+    .spacer {
+        height: 11vh;
+    }
+
+/*---------- Desktop Articles -----------*/
+    .article-view-wrapper {
+        margin-left: 150px;
+        max-width: calc(100% - 150px);
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+/*----------- Dynamic Classes -------------*/
+.grow:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }

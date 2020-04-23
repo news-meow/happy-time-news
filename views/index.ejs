@@ -1,12 +1,5 @@
 <!-- Home page view -->
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
 
 <head>
     <%- include('./layout/head') %>
@@ -19,17 +12,17 @@
             <%- include('./layout/header') %>
         </header>
 
-
-
-        <div class="article-view-wrapper">
+        <main class="article-view-wrapper">
 
             <% articles.forEach(article => { %>
 
             <% if (article.isCovid) { %>
-            <img src="<%= article.catGif.url %>" />
+            <img class="cat-gif" src="<%= article.catGif.url %>" />
             <% } else { %>
-            <div class="article-listing-wrapper">
-                <img class="article-image" src="<%= article.image_url %>" />
+            <article class="article-listing-wrapper">
+                <div class="img-wrapper">
+                    <img class="article-image" src="<%= article.image_url %>" />
+                </div>
                 <div class="article-words-wrapper">
                     <a href="<%= article.url %>" target="_blank">
                         <h2> <%= article.title %> </h2>
@@ -49,16 +42,17 @@
                         <button class="button">Save for later</button>
                     </form>
                 </div>
-            </div>
+            </article>
 
             <% }; %>
 
             <% }) %>
 
-        </div>
-
+        </main>
+        <footer class="footer">
+            <%- include('./layout/footer') %>
+        </footer>
     </div>
-    <script src="" async defer></script>
 </body>
 
 </html>
