@@ -42,15 +42,6 @@ function homePageRouteHandler(request, response) {
     });
 }
 
-
-
-// Refactoring for cleaner, drier code
-// function kittyCatApi(request, response) {
-//   const catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
-// }
-
-
-
 // Constructor functions for both superagent queries
 
 function Article(googleData) {
