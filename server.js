@@ -41,6 +41,7 @@ app.get('*', function(request, response, next) {
   next(err);
 });
 
+// Error and client requirements for app
 app.use(errorHandler);
 
 client.connect()
