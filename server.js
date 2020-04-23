@@ -16,6 +16,7 @@ const errorHandler = require('./modules/error');
 const catalogModule = require('./modules/catalog');
 const client = require('./modules/db');
 
+
 const { setArticlesToDB, getArticlesFromDB } = catalogModule;
 
 
