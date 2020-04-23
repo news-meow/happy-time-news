@@ -11,6 +11,10 @@
     border-bottom: solid grey 1px;
 }
 
+form {
+    height: 0;
+}
+
 /*----------- About Us -------------*/
 .article-listing-wrapper.profile {
     height: 275px;

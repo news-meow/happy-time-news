@@ -13,10 +13,12 @@
         </header>
 
         <main class="article-view-wrapper">
-            
+
             <% articles.forEach(article => { %>
             <article class="article-listing-wrapper">
+                <div class="img-wrapper">
                 <img class="article-image" src="<%= article.image_url %>" />
+                </div>
                 <div class="article-words-wrapper">
                     <a href="<%= article.url %>" target="_blank">
                         <h2> <%= article.title %> </h2>
@@ -27,20 +29,21 @@
                     </div>
                     <p><%= article.description %></p>
                     <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-                        <button class="button">Remove from Catalog</button>
+                        <button class="button">Send to Litterbox</button>
                     </form>
                 </div>
-                
+
             </article>
             <% }) %>
 
         </main>
 
-
     </div>
+
     <footer class="footer">
         <%- include('../layout/footer') %>
     </footer>
+
 </body>
 
 </html>
