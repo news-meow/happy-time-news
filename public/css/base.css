@@ -1,5 +1,14 @@
 /* Base stylesheet for all pages */
 
+/*------- Root Colors --------*/
+:root {
+    --txt-color: #ffffff;
+    --link-color: #a7e8bd;
+    --bg-color: #fcbcb8;
+    --header-color: #56cbf9;
+    --button-color: #137023; 
+    }
+
 * {
     box-sizing: border-box;
 }
@@ -8,9 +17,9 @@ body {
     min-width: 400px;
     height: 100vh;
     margin: 0 auto;
-    color: #ffffff;
+    color: #000;
 }
 
 .content-wrapper{
-    background: linear-gradient(to bottom right, rgb(252, 188, 184), rgb(197, 124, 118), rgb(146, 73, 68));
+    background: linear-gradient(to bottom right, rgb(255, 223, 221), rgb(252, 174, 167), rgb(255, 127, 118));
 }

@@ -1,40 +1,14 @@
-/* Article Listings */
+/* Page Specific Styles */
 
-.article-view-wrapper {
-    color: rgb(0, 0, 0);
-}
-
-.article-listing-wrapper {
-    background-color: #ffffff;
-}
-
-.article-author-source-wrapper {
-    color: #a8a4a4;
-}
-
-.button {
-    margin-left: 70%;
-    margin-top: 1%;
-    background-color: #56cbf9;
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 12px;
-    opacity: 0.7;
-    transition: 0.3s;
-    text-decoration: none;
-    cursor: pointer;
-}
-  
-.button:hover {
-    opacity: 1
-}
 /*----------- cat GIFS ------------*/
 .cat-gif {
     margin: 2%;
     max-width: 96%;
     max-height: 200px;
-    border: solid white 1px;
+    border-top: solid #fff 1px;
+    border-left: solid #fff 1px;
+    border-right: solid grey 1px;
+    border-bottom: solid grey 1px;
 }
 
 /*----------- About Us -------------*/
