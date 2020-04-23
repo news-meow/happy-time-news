@@ -13,6 +13,10 @@
         </header>
 
         <main class="article-view-wrapper">
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                This is an alert box.
+              </div>
 
             <% articles.forEach(article => { %>
 
@@ -51,8 +55,7 @@
         </main>
        
     </div>
-
-    <script type="text/javascript" src="/js/button.js"></script>
+    <!-- <script type="text/javascript" src="/js/button.js"></script> -->
     <footer class="footer">
         <%- include('./layout/footer') %>
     </footer>
