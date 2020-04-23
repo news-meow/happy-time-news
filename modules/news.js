@@ -17,20 +17,19 @@ function homePageRouteHandler(request, response) {
       apiKey: process.env.NEWS_API,
     })
     .then(newsResponse => {
-      let news = newsResponse.body;
+      let news = newsResponse.body;   // Get response from news API
       let articles = news.articles.map(article => new Article(article));
-      return Promise.all(articles.map(eachArticle =>
+      return Promise.all(articles.map(eachArticle =>  // Filtering through all articles
         eachArticle.isCovid ?
-          superagent.get(catUrl)
+          superagent.get(catUrl)  // Call cat API if regex test is true
             .set('Authorization', `x-api-key ${process.env.CATS_API}`)
             .then(catsResponse => {
               const catsData = catsResponse.body;
               const catGif = new Cat(catsData[0]);
               return catGif;
-            }) : Promise.resolve(null)
+            }) : Promise.resolve(null)  // Return article if regex test is false
       ))
-        .then(catResults => {
-          console.log(catResults);
+        .then(catResults => {  // Setting covid articles as catGif before sending viewModel to EJS
           articles.forEach((article, index) => {
             article.catGif = catResults[index];
           });
