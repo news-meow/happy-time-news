@@ -24,7 +24,6 @@ function setArticlesToDB(request, response) {
         const parameters = [newArticle.title, newArticle.author, newArticle.source, newArticle.url, newArticle.image_url, newArticle.description];
         return client.query(SQL, parameters)
           .then(result => {
-            console.log('Article saved', result);
             let id = result.rows[0].id;
             response.redirect('/');
           })

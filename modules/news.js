@@ -30,7 +30,6 @@ function homePageRouteHandler(request, response) {
             }) : Promise.resolve(null)
       ))
         .then(catResults => {
-          console.log(catResults);
           articles.forEach((article, index) => {
             article.catGif = catResults[index];
           });
