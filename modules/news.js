@@ -23,12 +23,13 @@ function homePageRouteHandler(request, response) {
       return articles;
     })
     .then(articles => {
-      const SQL = `SELECT url FROM articles`;
+      const SQL = `SELECT url, id FROM articles`;
       return client.query(SQL)
         .then(results => {
-          const saved = new Set(results.rows.map(row => row.url));
+          const saved = new Map(results.rows.map(row => [row.url, row.id]));
           articles.forEach(article => {
             article.isSaved = saved.has(article.url);
+            article.id = saved.get(article.url);
           })
           return articles;
         })
