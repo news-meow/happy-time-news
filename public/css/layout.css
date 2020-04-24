@@ -16,7 +16,7 @@ font-family: 'News Cycle', sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
+    background: linear-gradient(to right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
     border-bottom: solid #ffffff 2px;
     z-index: 99;
 }
@@ -170,7 +170,7 @@ letter-spacing: 0.1em;
 /*------------- footer -------------*/
 .footer {
     width: 100%;
-    background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
+    background: linear-gradient(to right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
     border-top: solid #ffffff 2px;
     text-align: center;
 }

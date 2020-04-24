@@ -17,7 +17,8 @@ form {
 
 /*----------- About Us -------------*/
 .article-listing-wrapper.profile {
-    height: 275px;
+    height: auto;
+    align-self: baseline;
 }
 
 .profile-img-wrapper {
@@ -30,5 +31,5 @@ form {
 }
 
 .article-listing-wrapper.profile p {
-    height: 200px;
+    height: auto;
 }
