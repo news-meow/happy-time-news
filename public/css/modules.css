@@ -32,4 +32,5 @@ form {
 
 .article-listing-wrapper.profile p {
     height: auto;
+    text-align: left;
 }

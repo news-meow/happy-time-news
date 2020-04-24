@@ -49,7 +49,7 @@ letter-spacing: 0.1em;
 /*------- Navigation & Social ------*/
 .sidebar {
     text-align: center;
-    height: 11vh;
+    height: 12vh;
 }
 
 .navbar ul {
@@ -87,7 +87,7 @@ letter-spacing: 0.1em;
 /*-------------- Spacer ---------------*/
 .spacer{
     width:100%;
-    height: 22vh;
+    height: 23vh;
 }
 
 /*--------- Article Listings ----------*/
