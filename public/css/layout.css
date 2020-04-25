@@ -214,6 +214,7 @@ letter-spacing: 0.1em;
         border-right: solid #fff 1px;
         background: linear-gradient(to bottom right, rgb(101, 211, 255), rgb(119, 203, 236), rgb(72, 183, 228));
         z-index: -1;
+        min-height: 95vh;
     }
 
     .navbar ul {
